@@ -6,11 +6,12 @@
 
 .wrapper {
     min-height: 100%;
-    margin-bottom: -70px;
+    margin-bottom: 50px;
 }
 
 .container {
     min-height: 480px;
+    
 }
 
 img {
