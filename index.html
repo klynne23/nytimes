@@ -88,22 +88,36 @@
      var articles=response.response.docs;
      console.log(articles);
      var x=$("#num-records").val();
+     
+
      for (var i=0;i<x;i++){
+        // var pubDate=articles[i].pub_date;
+        // var date = pubDate.split("-");
+        // var yearInput =$("#start-year").val();
+        // console.log(date[0]);
+        // console.log(yearInput);
+        //  if (yearInput==date[0]){
+        
          $("#resultsDiv").append(articles[i].snippet);
          var link =$("<a>")
+        $("#resultsDiv").append('<br>')
          $("#resultsDiv").append(link)
+        
          link.text("Read Full Article")
          link.attr('href',articles[i].web_url)
          $("#resultsDiv").append('<hr>')
-     }
+         
+     } 
            }).fail (function(error){
             throw error;
            })
+           
        });
        $("#clearBtn").on("click", function(event){
            $('#resultsDiv').text(' ');
          
        })
+
 </script>
 </body>
 
