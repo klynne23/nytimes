@@ -92,7 +92,7 @@
          $("#resultsDiv").append(articles[i].snippet);
          var link =$("<a>")
          $("#resultsDiv").append(link)
-         link.text("Read Full Articles")
+         link.text("Read Full Article")
          link.attr('href',articles[i].web_url)
          $("#resultsDiv").append('<hr>')
      }
@@ -100,6 +100,10 @@
             throw error;
            })
        });
+       $("clearBtn").on("click", function(event){
+           $("#searchBtn").val()= null;
+         
+       })
 </script>
 </body>
 
