@@ -1,0 +1,41 @@
+.jumbotron {
+    background-color: rgb(27, 27, 141);
+    text-align: center;
+    color: white;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -70px;
+}
+
+.container {
+    min-height: 480px;
+}
+
+img {
+    width: 40px;
+}
+
+.footer, .push {
+    height: 60px;
+}
+
+footer {
+    border: 1px solid grey;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 1;
+    height: 60px;
+    background-color: rgb(207, 207, 207);
+}
+
+
+
+footer p{
+    text-align: center;
+    margin-top: 1em;
+
+}
