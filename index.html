@@ -59,8 +59,9 @@
                 </div>
                 
                 <!-- Top Articles (Results) Container -->
-                <div id="resultsDiv">
+                
                 <h2>Top Articles</h2>
+                <div id="resultsDiv"></div>
                 </div>
     </div>
 
@@ -73,8 +74,8 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    $("#search-button").on("click", function(event){
-           var keyWord = $("#keyword-input").val()
+    $("#searchBtn").on("click", function(event){
+           var keyWord = $("#search-term").val()
            var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
              queryUrl += '?' + $.param({
                'api-key': "f8f24e31a0a8473e9355a1f9a68cf48b",
@@ -86,14 +87,14 @@
            }).done (function(response) {
      var articles=response.response.docs;
      console.log(articles);
-     var x=$("#articles-number").val();
+     var x=$("#num-records").val();
      for (var i=0;i<x;i++){
-         $("#articles").append(articles[i].snippet);
+         $("#resultsDiv").append(articles[i].snippet);
          var link =$("<a>")
-         $("#articles").append(link)
+         $("#resultsDiv").append(link)
          link.text("Read Full Articles")
          link.attr('href',articles[i].web_url)
-         $("#articles").append('<hr>')
+         $("#resultsDiv").append('<hr>')
      }
            }).fail (function(error){
             throw error;
